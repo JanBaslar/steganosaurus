@@ -1,0 +1,51 @@
+{
+    "btn": {
+        "changeFile": "Change file",
+        "changeImg": "Change image",
+        "hideFile": "Hide file",
+        "revealFile": "Reveal file",
+        "selectFile": "Select file",
+        "selectImg": "Select image"
+    },
+
+    "cap": {
+        "about": "Info about the application",
+        "language": "Language of the application",
+        "theme": "Light or dark theme of the application",
+        "system": "Uses system settings"
+    },
+
+    "err": {
+        "fileNotFound": "File not found!",
+        "imgNotFound": "Image not found!",
+        "noFile": "No file selected",
+        "selectImg": "Please select an image.",
+        "selectFile": "Please select a file.",
+        "selectDiffImg": "The image doesn't exist. please select a different image.",
+        "selectDiffFile": "The file doesn't exist. please select a different file.",
+        "fileTooLarge": "The file is too large. Please select a smaller file or a higher resolution image."
+
+    },
+
+    "lbl": {
+        "encryptKey": "Encryption key",
+        "decryptKey": "Decryption key",
+        "encryptKeyHint": "Remember the key well",
+        "decryptKeyHint": "File decryption key"
+    },
+
+    "nav": {
+        "about": "About",
+        "hideFile": "Hide file",
+        "language": "Language",
+        "revealFile": "Reveal file",
+        "settings": "Settings",
+        "theme": "Theme"
+    },
+
+    "thm": {
+        "dark": "Dark",
+        "light": "Light",
+        "system": "System"
+    }
+}

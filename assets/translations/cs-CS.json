@@ -1,0 +1,7 @@
+{
+    "hello": "Ahoj Světe!",
+    "info": {
+        "english": "Anglicky",
+        "czech": "Česky"
+    }
+}
