@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:steganosaurus/global/common/column_spacer.dart';
 import 'package:steganosaurus/global/config.dart';
 import 'package:steganosaurus/global/models/hide_envelope.dart';
@@ -26,19 +27,26 @@ class _HidingPageState extends State<HidingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-      body: CenterWrapper([
-        CircularProgressIndicator(),
-        ColumnSpacer(Styles.smallGap),
-        Text(
-          'Loading files',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: Styles.importantTextSize,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        body: CenterWrapper([
+          SpinKitWave(
+            color: Theme.of(context).colorScheme.primary,
           ),
-        ),
-      ]),
+          const ColumnSpacer(Styles.smallGap),
+          Text(
+            'Loading files',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontSize: Styles.importantTextSize,
+            ),
+          ),
+          const ColumnSpacer(Styles.smallGap)
+        ]),
+      ),
     );
   }
 }
