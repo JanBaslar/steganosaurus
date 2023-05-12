@@ -5,7 +5,7 @@ class Styles {
   /// Seed color used for themes.
   static const MaterialColor seedColor = Colors.lightGreen;
 
-  /// Widget marging from screen adges.
+  /// Widget margin from screen edges.
   static const double allMargin = 30.0;
 
   /// Button outline thickness for OutlineButtons and TextFields.

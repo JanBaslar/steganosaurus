@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:path_provider/path_provider.dart';
 import 'package:steganosaurus/global/models/validation_result.dart';
 
 class RevealEnvelope {
@@ -7,18 +8,21 @@ class RevealEnvelope {
 
   String? imgPath;
   String? decryptKey;
+  String? resultPathNoExt;
 
   bool isImgSelected() {
     return imgPath != null;
   }
 
-  ValidationResult validate() {
+  Future<ValidationResult> validate() async {
     if (imgPath == null) {
-      return ValidationResult(false, 'err.selectImg');
+      return ValidationResult.notValid('err.selectImg');
     } else if (!File(imgPath!).existsSync()) {
-      return ValidationResult(false, 'err.selectDiffImg');
+      return ValidationResult.notValid('err.selectDiffImg');
     } else {
-      return ValidationResult(true, 'Everything is valid');
+      resultPathNoExt =
+          '${(await getTemporaryDirectory()).path}\\Steganosaurus\\Revealed_${DateTime.now().millisecondsSinceEpoch}';
+      return ValidationResult.valid();
     }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:steganosaurus/global/models/reveal_envelope.dart';
+import 'package:steganosaurus/modules/hide/view/hiding_page.dart';
 
 import '../../../global/common/confirm_button.dart';
 import '../../../global/common/column_spacer.dart';
@@ -9,7 +10,6 @@ import '../../../global/common/select_button.dart';
 import '../../../global/common/steg_field.dart';
 import '../../../global/config.dart';
 import '../../../global/controllers/file_pickers.dart';
-import '../../../global/models/validation_result.dart';
 import '../../../global/utils/styles.dart';
 import '../../../global/utils/supported_locales.dart';
 import '../../../global/widgets/error_message.dart';
@@ -76,12 +76,21 @@ class _RevealFileFormState extends State<RevealFileForm> {
             ? () {
                 setState(() {
                   _validating = true;
-                  ValidationResult result = _envelope.validate();
-                  if (result.isValidated) {
-                    _errorMessage = null;
-                  } else {
-                    _errorMessage = result.message;
-                  }
+                  _envelope.validate().then((result) => {
+                        if (result.isValid)
+                          {
+                            _errorMessage = null,
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HidingPage()),
+                            ),
+                          }
+                        else
+                          {
+                            _errorMessage = result.message,
+                          }
+                      });
                   _validating = false;
                 });
               }

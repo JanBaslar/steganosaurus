@@ -18,13 +18,21 @@
     "err": {
         "fileNotFound": "File not found!",
         "imgNotFound": "Image not found!",
-        "noFile": "No file selected",
+        "noFile": "No file selected.",
         "selectImg": "Please select an image.",
         "selectFile": "Please select a file.",
-        "selectDiffImg": "The image doesn't exist. please select a different image.",
-        "selectDiffFile": "The file doesn't exist. please select a different file.",
-        "fileTooLarge": "The file is too large. Please select a smaller file or a higher resolution image."
-
+        "selectDiffImg": "The image doesn't exist. Please select a different image.",
+        "selectDiffFile": "The file doesn't exist. Please select a different file.",
+        "fileTooLarge": "The file is too large. Please select a smaller file or a higher resolution image.",
+        "imgLoadFail": "Loading image failed.",
+        "fileLoadFail": "Loading file failed.",
+        "imgSaveFail": "Image saving failed.",
+        "fileSaveFail": "File saving failed.",
+        "keyFail": "Key creation failed.",
+        "extTooLong": "The file extension is too long. Only files with extension up to 5 characters are supported.",
+        "only3Chan": "Only images with three color channels are supported.",
+        "bigFail": "Oops. Something went terribly wrong!",
+        "revealFail": "Revealing of the file failed. This image either does not contain secret data or you have entered an incorrect decryption key."
     },
 
     "lbl": {
@@ -41,6 +49,13 @@
         "revealFile": "Reveal file",
         "settings": "Settings",
         "theme": "Theme"
+    },
+
+    "rst": {
+        "hidingSuccess": "Hiding the file in the image was successful",
+        "hidingFailed": "Hiding the file in the image failed!",
+        "revealingSuccess": "Revealing the file from the image was successful",
+        "revealingFailed": "Revealing the file from the image failed!"
     },
 
     "thm": {

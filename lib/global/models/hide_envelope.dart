@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:ui';
 
+import 'package:path_provider/path_provider.dart';
 import 'package:steganosaurus/global/models/validation_result.dart';
 
 class HideEnvelope {
@@ -9,6 +10,7 @@ class HideEnvelope {
   String? imgPath;
   String? filePath;
   String? encryptKey;
+  String? resultPath;
 
   bool areFilesSelected() {
     return imgPath != null && filePath != null;
@@ -16,20 +18,20 @@ class HideEnvelope {
 
   Future<ValidationResult> validate() async {
     if (imgPath == null) {
-      return ValidationResult(false, 'err.selectImg');
+      return ValidationResult.notValid('err.selectImg');
     } else if (filePath == null) {
-      return ValidationResult(false, 'err.selectFile');
+      return ValidationResult.notValid('err.selectFile');
     } else if (!File(imgPath!).existsSync()) {
-      return ValidationResult(false, 'err.selectDiffImg');
+      return ValidationResult.notValid('err.selectDiffImg');
     } else if (!File(filePath!).existsSync()) {
-      return ValidationResult(false, 'err.selectDiffFile');
+      return ValidationResult.notValid('err.selectDiffFile');
     }
 
-    // Counting image message capacity and file size (For LSB algorithm)
+    // Computing image message capacity and file size (For own LSB algorithm)
     final ImmutableBuffer buffer =
         await ImmutableBuffer.fromUint8List(File(imgPath!).readAsBytesSync());
     final imgDesc = await ImageDescriptor.encoded(buffer);
-    final double imgCapacity = (imgDesc.width * imgDesc.height * 3) / 8;
+    final double imgCapacity = ((imgDesc.width * imgDesc.height * 3) - 160) / 8;
 
     imgDesc.dispose();
     buffer.dispose();
@@ -37,9 +39,11 @@ class HideEnvelope {
     final fileSize = File(filePath!).lengthSync();
 
     if (fileSize > imgCapacity) {
-      return ValidationResult(false, 'err.fileTooLarge');
+      return ValidationResult.notValid('err.fileTooLarge');
     } else {
-      return ValidationResult(true, 'Everything is valid');
+      resultPath =
+          '${(await getTemporaryDirectory()).path}\\Steganosaurus\\Hidden_${DateTime.now().millisecondsSinceEpoch}.png';
+      return ValidationResult.valid();
     }
   }
 }

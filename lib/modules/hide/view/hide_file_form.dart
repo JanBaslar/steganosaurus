@@ -92,7 +92,7 @@ class _HideFileFormState extends State<HideFileForm> {
                 setState(() {
                   _validating = true;
                   _envelope.validate().then((result) => {
-                        if (result.isValidated)
+                        if (result.isValid)
                           {
                             _errorMessage = null,
                             Navigator.push(

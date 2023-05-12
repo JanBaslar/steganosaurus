@@ -1,20 +1,18 @@
 class ProcessingResult {
-  bool success = false;
+  bool success;
   String? message;
   String? filePath;
 
   /// Used as result of hiding or revealing.
-  ProcessingResult();
+  ProcessingResult._(this.success, this.message, this.filePath);
 
   /// Fail with error message
-  void fail(String message) {
-    success = false;
-    message = message;
+  static ProcessingResult fail(String message) {
+    return ProcessingResult._(false, message, null);
   }
 
   /// Use if whole operation was success
-  void succeed(String message) {
-    success = true;
-    message = message;
+  static ProcessingResult succeed(String filePath) {
+    return ProcessingResult._(true, null, filePath);
   }
 }

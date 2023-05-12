@@ -26,7 +26,7 @@ class _FilePreviewState extends State<FilePreview> {
   Widget build(BuildContext context) {
     _currentLocale = context.locale;
 
-    String fileName = 'err.noFile';
+    String fileName = tr('err.noFile');
     String fileSize = '';
     Icon fileIcon = Icon(Icons.insert_drive_file_rounded,
         color: Theme.of(context).colorScheme.tertiary);
@@ -41,7 +41,7 @@ class _FilePreviewState extends State<FilePreview> {
         fileIcon = chooseIcon(getExtension(fileName), context);
         fileSize = countFileSize(fileBytes);
       } catch (e) {
-        fileName = 'err.fileNotFound';
+        fileName = tr('err.fileNotFound');
         fileIcon = Icon(
           Icons.error_rounded,
           color: themeHolder.currentThemeMode() == ThemeMode.light
@@ -66,7 +66,7 @@ class _FilePreviewState extends State<FilePreview> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                child: Text(fileName).tr(),
+                child: Text(fileName),
               ),
             ),
             Text(
