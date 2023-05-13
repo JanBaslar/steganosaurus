@@ -1,7 +1,78 @@
 {
-    "hello": "Ahoj Světe!",
-    "info": {
-        "english": "Anglicky",
-        "czech": "Česky"
+    "btn": {
+        "changeFile": "Změnit soubor",
+        "changeImg": "Změnit obrázek",
+        "hideFile": "Skrýt soubor",
+        "revealFile": "Odhalit soubor",
+        "selectFile": "Vybrat soubor",
+        "selectImg": "Vybrat obrázek"
+    },
+
+    "cap": {
+        "about": "Informace o aplikaci",
+        "language": "Jazyk aplikace",
+        "theme": "Motiv aplikace",
+        "system": "Použije nastavení systému"
+    },
+
+    "err": {
+        "fileNotFound": "Soubor nenalezen!",
+        "imgNotFound": "Obrázek nenalezen!",
+        "noFile": "Soubor nevybrán.",
+        "selectImg": "Vyberte obrázek prosím.",
+        "selectFile": "Vyberte soubor prosím.",
+        "selectDiffImg": "Obrázek neexistuje. Vyberte prosím jiný obrázek.",
+        "selectDiffFile": "Soubor neexistuje. Vyberte prosím jiný soubor.",
+        "fileTooLarge": "Soubor je příliš velký. Vyberte prosím menší soubor nebo obrázek s vyšším rozlišením.",
+        "imgLoadFail": "Načítání obrázku selhalo.",
+        "fileLoadFail": "Načítání souboru selhalo.",
+        "imgSaveFail": "Ukládání obrázku selhalo.",
+        "fileSaveFail": "Načítání souboru selhalo.",
+        "keyFail": "Vytváření klíče selhalo",
+        "extTooLong": "Přípona souboru je příliš dlouhá. Podporovány jsou pouze soubory s příponou do 5 znaků.",
+        "only3Chan": "Podporovány jsou pouze obrázky se třemi barevnými kanály.",
+        "bigFail": "Ups. Něco se hodně pokazilo!",
+        "revealFail": "Odhalení souboru se nezdařilo. Tento obrázek buď neobsahuje tajná data, nebo jste zadali nesprávný dešifrovací klíč."
+    },
+
+    "lbl": {
+        "encryptKey": "Šifrovací klíč",
+        "decryptKey": "Dešifrovací klíč",
+        "encryptKeyHint": "Klíč si dobře zapamatujte.",
+        "decryptKeyHint": "Klíč k dešifrování souboru."
+    },
+
+    "inf": {
+        "part1": "  Vítejte v aplikaci Steganosaurus. Tato aplikace umožňuje ukrývat jakýkoliv binární soubor do obrázku, aniž by se velikost výsledného obrázku jakkoliv změnila. Aplikace využívá vlastní algoritmus řízený klíčem, který zaručuje bezpečnost ukrytých dat před útočníky.",
+        "part2": "  Obrázek se skrytými daty nijak needitujte či nekomprimujete, mohlo by to vést ke ztrátě tajných dat v obrázku."
+    },
+
+    "msg": {
+        "hiding": "Ukrývám soubor",
+        "revealing": "Odhaluji soubor"
+    },
+
+    "nav": {
+        "about": "O aplikaci",
+        "hideFile": "Skrýt soubor",
+        "language": "Jazyk",
+        "revealFile": "Odhalit soubor",
+        "settings": "Nastavení",
+        "theme": "Motiv"
+    },
+
+    "rst": {
+        "hidingSuccess": "Skrytí souboru proběhlo úspěšně.",
+        "hidingFailed": "Skrytí souboru selhalo!",
+        "revealingSuccess": "Odhalení souboru proběhlo úspěšně.",
+        "revealingFailed": "Odhalení souboru selhalo!",
+        "imgSavedTo": "Obrázek byl uložen do ",
+        "fileSavedTo": "Soubor byl uložen do "
+    },
+
+    "thm": {
+        "dark": "Tmavý",
+        "light": "Světlý",
+        "system": "Systém"
     }
 }

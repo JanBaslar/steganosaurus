@@ -42,6 +42,16 @@
         "decryptKeyHint": "File decryption key"
     },
 
+    "inf": {
+        "part1": "  Welcome to the Steganosaurus app. This application allows you to hide any binary file in an image without changing the size of the resulting image in any way. The application uses a proprietary key-driven algorithm that guarantees the safety of the hidden data from attackers.",
+        "part2": "  Do not edit or compress the image with hidden data in any way, this could lead to loss of secret data in the image."
+    },
+
+    "msg": {
+        "hiding": "Hiding file",
+        "revealing": "Revealing file"
+    },
+
     "nav": {
         "about": "About",
         "hideFile": "Hide file",
@@ -52,10 +62,12 @@
     },
 
     "rst": {
-        "hidingSuccess": "Hiding the file in the image was successful",
-        "hidingFailed": "Hiding the file in the image failed!",
-        "revealingSuccess": "Revealing the file from the image was successful",
-        "revealingFailed": "Revealing the file from the image failed!"
+        "hidingSuccess": "Hiding the file was successful.",
+        "hidingFailed": "Hiding the file failed!",
+        "revealingSuccess": "Revealing the file was successful.",
+        "revealingFailed": "Revealing the file failed!",
+        "imgSavedTo": "The image was saved to",
+        "fileSavedTo": "The file was saved to"
     },
 
     "thm": {

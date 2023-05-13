@@ -42,7 +42,7 @@ class HideEnvelope {
       return ValidationResult.notValid('err.fileTooLarge');
     } else {
       resultPath =
-          '${(await getTemporaryDirectory()).path}\\Steganosaurus\\Hidden_${DateTime.now().millisecondsSinceEpoch}.png';
+          '${(await getApplicationDocumentsDirectory()).path}\\Steganosaurus\\Hidden_${DateTime.now().millisecondsSinceEpoch}.png';
       return ValidationResult.valid();
     }
   }

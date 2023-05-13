@@ -21,7 +21,7 @@ class RevealEnvelope {
       return ValidationResult.notValid('err.selectDiffImg');
     } else {
       resultPathNoExt =
-          '${(await getTemporaryDirectory()).path}\\Steganosaurus\\Revealed_${DateTime.now().millisecondsSinceEpoch}';
+          '${(await getApplicationDocumentsDirectory()).path}\\Steganosaurus\\Revealed_${DateTime.now().millisecondsSinceEpoch}';
       return ValidationResult.valid();
     }
   }

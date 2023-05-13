@@ -1,13 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:steganosaurus/global/models/reveal_envelope.dart';
-import 'package:steganosaurus/modules/hide/view/hiding_page.dart';
+import 'package:steganosaurus/modules/reveal/view/revealing_page.dart';
 
 import '../../../global/common/confirm_button.dart';
 import '../../../global/common/column_spacer.dart';
 import '../../../global/common/scrollable_wrapper.dart';
 import '../../../global/common/select_button.dart';
-import '../../../global/common/steg_field.dart';
+import '../../../global/common/key_field.dart';
 import '../../../global/config.dart';
 import '../../../global/controllers/file_pickers.dart';
 import '../../../global/utils/styles.dart';
@@ -47,7 +47,7 @@ class _RevealFileFormState extends State<RevealFileForm> {
       const ColumnSpacer(Styles.smallGap),
       SelectButton(
         onPressed: () {
-          pickImgPath(_envelope.imgPath).then((path) => setState(() => {
+          pickPNGPath(_envelope.imgPath).then((path) => setState(() => {
                 _envelope.imgPath = path,
                 _errorMessage = null,
               }));
@@ -58,7 +58,7 @@ class _RevealFileFormState extends State<RevealFileForm> {
             : const Text('btn.selectImg').tr(),
       ),
       const ColumnSpacer(Styles.bigGap),
-      StegField(
+      KeyField(
         icon: const Icon(Icons.key_rounded),
         onChange: (value) {
           setState(() {
@@ -83,7 +83,7 @@ class _RevealFileFormState extends State<RevealFileForm> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const HidingPage()),
+                                  builder: (context) => const RevealingPage()),
                             ),
                           }
                         else

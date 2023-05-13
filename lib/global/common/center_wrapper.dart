@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:steganosaurus/global/utils/styles.dart';
 
 class CenterWrapper extends StatelessWidget {
-  /// Wrapes the screen layout, centers content in column and adds margin.
+  /// Wraps the screen layout, centers content in column and adds margin.
   const CenterWrapper(this.children, {super.key});
 
   final List<Widget> children;

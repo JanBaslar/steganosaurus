@@ -4,7 +4,7 @@ import 'package:steganosaurus/global/common/confirm_button.dart';
 import 'package:steganosaurus/global/common/column_spacer.dart';
 import 'package:steganosaurus/global/common/scrollable_wrapper.dart';
 import 'package:steganosaurus/global/common/select_button.dart';
-import 'package:steganosaurus/global/common/steg_field.dart';
+import 'package:steganosaurus/global/common/key_field.dart';
 import 'package:steganosaurus/global/config.dart';
 import 'package:steganosaurus/global/models/hide_envelope.dart';
 import 'package:steganosaurus/global/widgets/error_message.dart';
@@ -28,7 +28,7 @@ class _HideFileFormState extends State<HideFileForm> {
   // ignore: unused_field
   Locale _currentLocale = SupportedLocales.english;
 
-  final HideEnvelope _envelope = mainPageStatesHolder.hideEnvelope;
+  HideEnvelope _envelope = mainPageStatesHolder.hideEnvelope;
   final TextEditingController _keyController = TextEditingController();
   bool _validating = false;
   String? _errorMessage;
@@ -42,6 +42,7 @@ class _HideFileFormState extends State<HideFileForm> {
   @override
   Widget build(BuildContext context) {
     _currentLocale = context.locale;
+    _envelope = mainPageStatesHolder.hideEnvelope;
     return ScrollableWrapper([
       ImagePreview(_envelope.imgPath),
       const ColumnSpacer(Styles.smallGap),
@@ -73,7 +74,7 @@ class _HideFileFormState extends State<HideFileForm> {
             : const Text('btn.selectFile').tr(),
       ),
       const ColumnSpacer(Styles.bigGap),
-      StegField(
+      KeyField(
         icon: const Icon(Icons.key_rounded),
         onChange: (value) {
           setState(() {
