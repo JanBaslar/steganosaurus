@@ -8,3 +8,6 @@ ThemeHolder themeHolder = ThemeHolder();
 
 /// Main Page States Holder
 MainPageStatesHolder mainPageStatesHolder = MainPageStatesHolder();
+
+/// Folder for app input and output
+const String appFolder = '/storage/emulated/0/Documents/Steganosaurus/';
