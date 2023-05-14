@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:steganosaurus/global/models/validation_result.dart';
 
 class RevealEnvelope {
@@ -20,8 +20,17 @@ class RevealEnvelope {
     } else if (!File(imgPath!).existsSync()) {
       return ValidationResult.notValid('err.selectDiffImg');
     } else {
+      PermissionStatus status = await Permission.manageExternalStorage.status;
+      if (status.isDenied) {
+        status = await Permission.manageExternalStorage.request();
+      }
+
+      if (status.isDenied) {
+        return ValidationResult.notValid('err.permDeny');
+      }
+
       resultPathNoExt =
-          '${(await getApplicationDocumentsDirectory()).path}\\Steganosaurus\\Revealed_${DateTime.now().millisecondsSinceEpoch}';
+          '/storage/emulated/0/Steganosaurus/Revealed_${DateTime.now().millisecondsSinceEpoch}';
       return ValidationResult.valid();
     }
   }

@@ -73,8 +73,7 @@ class _RevealFileFormState extends State<RevealFileForm> {
       ConfirmButton(
         label: tr('btn.revealFile'),
         onPressed: _envelope.isImgSelected() && !_validating
-            ? () {
-                setState(() {
+            ? () => setState(() {
                   _validating = true;
                   _envelope.validate().then((result) => {
                         if (result.isValid)
@@ -92,8 +91,7 @@ class _RevealFileFormState extends State<RevealFileForm> {
                           }
                       });
                   _validating = false;
-                });
-              }
+                })
             : null,
       ),
       const ColumnSpacer(Styles.smallGap),

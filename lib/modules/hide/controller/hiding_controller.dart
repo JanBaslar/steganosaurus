@@ -112,7 +112,7 @@ class HidingController {
     try {
       await encodePngFile(envelope.resultPath!, image);
     } catch (e) {
-      return ProcessingResult.fail('err.imgSaveFail');
+      return ProcessingResult.fail(e.toString());
     }
 
     return ProcessingResult.succeed(envelope.resultPath!);

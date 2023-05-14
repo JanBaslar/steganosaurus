@@ -32,7 +32,8 @@
         "extTooLong": "Přípona souboru je příliš dlouhá. Podporovány jsou pouze soubory s příponou do 5 znaků.",
         "only3Chan": "Podporovány jsou pouze obrázky se třemi barevnými kanály.",
         "bigFail": "Ups. Něco se hodně pokazilo!",
-        "revealFail": "Odhalení souboru se nezdařilo. Tento obrázek buď neobsahuje tajná data, nebo jste zadali nesprávný dešifrovací klíč."
+        "revealFail": "Odhalení souboru se nezdařilo. Tento obrázek buď neobsahuje tajná data, nebo jste zadali nesprávný dešifrovací klíč.",
+        "permDeny": "Přístup k externímu místnímu úložišti byl odepřen."
     },
 
     "lbl": {

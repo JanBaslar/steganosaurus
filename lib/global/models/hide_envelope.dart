@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:ui';
 
-import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:steganosaurus/global/models/validation_result.dart';
 
 class HideEnvelope {
@@ -41,8 +41,17 @@ class HideEnvelope {
     if (fileSize > imgCapacity) {
       return ValidationResult.notValid('err.fileTooLarge');
     } else {
+      PermissionStatus status = await Permission.manageExternalStorage.status;
+      if (status.isDenied) {
+        status = await Permission.manageExternalStorage.request();
+      }
+
+      if (status.isDenied) {
+        return ValidationResult.notValid('err.permDeny');
+      }
+
       resultPath =
-          '${(await getApplicationDocumentsDirectory()).path}\\Steganosaurus\\Hidden_${DateTime.now().millisecondsSinceEpoch}.png';
+          '/storage/emulated/0/Steganosaurus/Hidden_${DateTime.now().millisecondsSinceEpoch}.png';
       return ValidationResult.valid();
     }
   }

@@ -89,8 +89,7 @@ class _HideFileFormState extends State<HideFileForm> {
       ConfirmButton(
         label: tr('btn.hideFile'),
         onPressed: _envelope.areFilesSelected() && !_validating
-            ? () {
-                setState(() {
+            ? () => setState(() {
                   _validating = true;
                   _envelope.validate().then((result) => {
                         if (result.isValid)
@@ -108,8 +107,7 @@ class _HideFileFormState extends State<HideFileForm> {
                           }
                       });
                   _validating = false;
-                });
-              }
+                })
             : null,
       ),
       const ColumnSpacer(Styles.smallGap),

@@ -32,7 +32,8 @@
         "extTooLong": "The file extension is too long. Only files with extension up to 5 characters are supported.",
         "only3Chan": "Only images with three color channels are supported.",
         "bigFail": "Oops. Something went terribly wrong!",
-        "revealFail": "Revealing of the file failed. This image either does not contain secret data or you have entered an incorrect decryption key."
+        "revealFail": "Revealing of the file failed. This image either does not contain secret data or you have entered an incorrect decryption key.",
+        "permDeny": "Permission to external local storage was denied."
     },
 
     "lbl": {
