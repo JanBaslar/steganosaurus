@@ -108,7 +108,7 @@ class HidingController {
       return ProcessingResult.fail('err.bigFail');
     }
 
-    // Writing image to tmp folder.
+    // Writing image to folder.
     try {
       await encodePngFile(envelope.resultPath!, image);
     } catch (e) {

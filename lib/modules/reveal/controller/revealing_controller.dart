@@ -103,7 +103,7 @@ class RevealingController {
       return ProcessingResult.fail('err.revealFail');
     }
 
-    // Writing file to tmp folder.
+    // Writing file to folder.
     try {
       Uint8List fileBytes = Uint8List.fromList(bytesHolder);
       File(envelope.resultPathNoExt! + extension).writeAsBytesSync(fileBytes);
